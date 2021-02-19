@@ -1,0 +1,134 @@
+<html>
+<head>
+    <title>calculator</title>
+
+    <script>
+      function getinput(){
+            const operator = document.getElementById('mySelect').value;
+            if (operator == '+') {
+                add();
+    }
+    else if (operator == '-') {
+        sub();
+    }
+    else if (operator == '*') {
+        mul();
+    }
+    else if (operator=='/') {
+       div();
+ 
+    }
+}
+
+function add(){
+    let result;
+            let number1 = document.getElementById('input_id1').value;
+            let number2 = document.getElementById('input_id2').value;
+    result = parseInt(number1)+ parseInt(number2);
+    document.getElementById('alert').innerHTML= "output " +result;
+
+    let message;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  try { 
+    if(number1 == "")  throw "enter a number";
+    if(number2 == "")  throw "enter a number";
+    if(isNaN(number1)) throw "not a number";
+    if(isNaN(number2)) throw "not a number";
+    if(number2==0)     throw "cannot divide by zero";
+  }
+  catch(err) {
+    message.innerHTML = err;
+  }
+
+}
+function sub(){
+    let result;
+            let number1 = document.getElementById('input_id1').value;
+            let number2 = document.getElementById('input_id2').value;
+    result = number1 - number2;
+    document.getElementById('alert').innerHTML= "output " +result;
+
+    let message;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  try { 
+    if(number1 == "")  throw "enter a number";
+    if(number2 == "")  throw "enter a number";
+    if(isNaN(number1)) throw "not a number";
+    if(isNaN(number2)) throw "not a number";
+    if(number2==0)     throw "cannot divide by zero";
+  }
+  catch(err) {
+    message.innerHTML = err;
+  }
+
+}
+function mul(){
+    let result;
+            let number1 = document.getElementById('input_id1').value;
+            let number2 = document.getElementById('input_id2').value;
+    result = number1 * number2;
+    document.getElementById('alert').innerHTML= "output " +result;
+
+    let message;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  try { 
+    if(number1 == "")  throw "enter a number";
+    if(number2 == "")  throw "enter a number";
+    if(isNaN(number1)) throw "not a number";
+    if(isNaN(number2)) throw "not a number";
+    if(number2==0)     throw "cannot divide by zero";
+  }
+  catch(err) {
+    message.innerHTML = err;
+  }
+
+}
+function div(){
+    let result;
+            let number1 = document.getElementById('input_id1').value;
+            let number2 = document.getElementById('input_id2').value;
+    result = number1 /number2;
+    document.getElementById('alert').innerHTML= "output " +result;
+
+    let message;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  try { 
+    if(number1 == "")  throw "enter a number";
+    if(number2 == "")  throw "enter a number";
+    if(isNaN(number1)) throw "not a number";
+    if(isNaN(number2)) throw "not a number";
+    if(number2==0)     throw "cannot divide by zero";
+  }
+  catch(err) {
+    message.innerHTML = err;
+  }
+
+}
+    </script>
+</head>
+<body>
+  <form>
+    <input type="text" id="input_id1" value="">
+    <br><br>
+    <input type="text" id="input_id2" value="">
+    <br><br>
+    <select id="mySelect" size="4">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+      </select>
+      <br><br>
+
+      <input type="button" value="Answer" onclick="getinput()" />
+      <p id="p01"></p>
+      <br>
+    <div id="alert"></div>
+    <br>
+  </form>
+</body>
+</html>
