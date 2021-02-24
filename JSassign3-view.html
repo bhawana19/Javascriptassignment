@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 3</title>
+  </head>
+  <body>
+    <table id="table" frame="border" rules="all"></table>
+    <h3 id="notice" style="display: none;"></h3>
+    <script>
+      let list = JSON.parse(localStorage.getItem("array"));
+      let cols = [];
+
+      if (list === null) {
+        document.getElementById("notice").innerText = "Enter details to view.";
+        document.getElementById("notice").style.display = "block";
+      } else {
+        for (let i = 0; i < list.length; i++) {
+          for (let k in list[i]) {
+            if (cols.indexOf(k) === -1) {
+              cols.push(k);
+            }
+          }
+        }
+
+        let table = document.createElement("table");
+        let tr = table.insertRow(-1);
+        for (let i = 0; i < cols.length; i++) {
+          let theader = document.createElement("th");
+          theader.innerHTML = cols[i];
+          tr.appendChild(theader);
+        }
+
+        for (var i = 0; i < list.length; i++) {
+          trow = table.insertRow(-1);
+          for (var j = 0; j < cols.length; j++) {
+            var cell = trow.insertCell(-1);
+            cell.innerHTML = list[i][cols[j]];
+          }
+        }
+
+        let el = document.getElementById("table");
+        el.innerHTML = "";
+        el.appendChild(table);
+      }
+    </script>
+  </body>
+</html>

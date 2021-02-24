@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 3</title>
+    <script src="edit.js"></script>
+</head>
+<body>
+    <form id="id1" onsubmit="event.preventDefault(); searchid();" style="display: block;">
+        <label>Enter Employee ID: <input type="number" id="eId"></input></label>
+        <input type="submit" id="sub" value="id">
+    </form>
+    <br><br>
+    <h3 id="search" style="display: none;"></h3>
+    <br><br>
+    <form id="id2" style="display: none;" onsubmit="event.preventDefault(); edit();">
+        <label>Name: <input type="text" id="name" name="enm"></input></label>
+        <br><br>
+        <label>Address: <br><textarea id="address" name="edd" rows="3" column="21"></textarea></label>
+        <br><br>
+        <label>Id: <input type="number" id="eid" name="eid"></input></label>
+        <br><br>
+        <label>Designation: <input type="text" id="designation" name="edsgn"></input></label>
+        <br><br>
+        <input type="submit" id="submit" value="edit employ details">
+    </form>
+</body>
+</html>
